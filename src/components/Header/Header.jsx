@@ -5,7 +5,9 @@ export const Header = () => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-between p-5 mx-auto mt-10 space-y-10 sm:space-y-0">
       <div className="sm:w-1/2">
-        <h2 className="text-4xl font-bold mb-4">Welcome to Our Restaurant</h2>
+        <h2 className="text-4xl font-bold mb-4">
+          We provide the best food for you
+        </h2>
         <p className=" mb-6">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet
           bibendum ligula, eu laoreet nulla tempor non. Nunc eget felis ante.
@@ -26,7 +28,7 @@ export const Header = () => {
           </button>
         </div>
       </div>
-      <div className="w-full sm:w-1/2">
+      <div className="w-full sm:w-1/2 sm:ml-10">
         <img
           src={image}
           alt="Restaurant"
