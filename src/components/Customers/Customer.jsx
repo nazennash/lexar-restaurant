@@ -35,62 +35,73 @@ export const Customer = () => {
   }, []);
 
   return (
-    <div className="p-5">
-      <div className="text-center space-y-4">
-        <p className="text-3xl font-bold">Our Happy Clients</p>
-        <p className="max-w-sm mx-auto text-sm">
-          See what our happy clients have to say about our services.
-        </p>
-      </div>
+    <div className="bg-gray-50">
+      <div className="p-5 container mx-auto">
+        <div className="mt-20">
+          <div className="p-5">
+            <div className="text-center space-y-4">
+              <p className="text-3xl font-bold">Our Happy Clients</p>
+              <p className="max-w-sm mx-auto text-sm">
+                See what our happy clients have to say about our services.
+              </p>
+            </div>
 
-      <div className="relative mt-20 max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 gap-y-20">
-          {clients
-            .slice(currentIndex, currentIndex + 2)
-            .map((client, index) => (
-              <div
-                key={index}
-                className="relative p-5 pt-16 text-center shadow-md bg-white rounded-bl-lg rounded-tr-lg rounded-br-xl"
-              >
-                <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
-                  <img
-                    src={image}
-                    alt="Happy Client"
-                    className="rounded-full w-32 h-32 object-cover border-4 border-white shadow-lg"
-                  />
-                </div>
-                <p className="font-semibold mt-8">{client.name}</p>
-                <p className="max-w-xs mx-auto">{client.testimonial}</p>
-                <div className="mt-4">
-                  {Array.from({ length: client.rating }).map((_, index) => (
-                    <span key={index} className="text-yellow-500">
-                      ★
-                    </span>
+            <div className="relative mt-20 max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 gap-y-20">
+                {clients
+                  .slice(currentIndex, currentIndex + 2)
+                  .map((client, index) => (
+                    <div
+                      key={index}
+                      className="relative p-5 pt-16 text-center shadow-md bg-white rounded-bl-lg rounded-tr-lg rounded-br-xl"
+                    >
+                      <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
+                        <img
+                          src={image}
+                          alt="Happy Client"
+                          className="rounded-full w-32 h-32 object-cover border-4 border-white shadow-lg"
+                        />
+                      </div>
+                      <p className="font-semibold mt-8">{client.name}</p>
+                      <p className="max-w-xs mx-auto">{client.testimonial}</p>
+                      <div className="mt-4">
+                        {Array.from({ length: client.rating }).map(
+                          (_, index) => (
+                            <span key={index} className="text-yellow-500">
+                              ★
+                            </span>
+                          )
+                        )}
+                      </div>
+                    </div>
                   ))}
-                </div>
               </div>
-            ))}
-        </div>
 
-        <div className="absolute top-1/2 left-0 transform -translate-y-1/2 text-2xl text-gray-500 cursor-pointer">
-          <button
-            onClick={() =>
-              setCurrentIndex(
-                (prevIndex) => (prevIndex - 2 + clients.length) % clients.length
-              )
-            }
-          >
-            &#60;
-          </button>
-        </div>
-        <div className="absolute top-1/2 right-0 transform -translate-y-1/2 text-2xl text-gray-500 cursor-pointer">
-          <button
-            onClick={() =>
-              setCurrentIndex((prevIndex) => (prevIndex + 2) % clients.length)
-            }
-          >
-            &#62;
-          </button>
+              <div className="absolute top-1/2 left-0 transform -translate-y-1/2 text-2xl text-gray-500 cursor-pointer">
+                <button
+                  onClick={() =>
+                    setCurrentIndex(
+                      (prevIndex) =>
+                        (prevIndex - 2 + clients.length) % clients.length
+                    )
+                  }
+                >
+                  &#60;
+                </button>
+              </div>
+              <div className="absolute top-1/2 right-0 transform -translate-y-1/2 text-2xl text-gray-500 cursor-pointer">
+                <button
+                  onClick={() =>
+                    setCurrentIndex(
+                      (prevIndex) => (prevIndex + 2) % clients.length
+                    )
+                  }
+                >
+                  &#62;
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
